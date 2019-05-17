@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { ActorListComponent } from './components/actor-list/actor-list.component';
 import {FilterStringPipe} from './shared/pipes/filter-string.pipe';
 import { AuthComponent } from './components/auth/auth.component';
+import { SearchComponent } from './components/search/search.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ActorListComponent,
     FilterStringPipe,
-    AuthComponent
+    AuthComponent,
+    SearchComponent
+
   ],
   imports: [
     BrowserModule,
