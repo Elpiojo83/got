@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ActorListComponent } from './components/actor-list/actor-list.component';
 import {FilterStringPipe} from './shared/pipes/filter-string.pipe';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ActorListComponent,
-    FilterStringPipe
+    FilterStringPipe,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
