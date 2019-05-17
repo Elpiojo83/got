@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ActorListComponent } from './components/actor-list/actor-list.component';
 import {FilterStringPipe} from './shared/pipes/filter-string.pipe';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ActorListComponent,
-    FilterStringPipe
+    FilterStringPipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
