@@ -1,0 +1,36 @@
+<div class="filter" [ngClass]="{'hide-filter': hideOthers}">
+  <input type="text" placeholder="Search" [(ngModel)]="filter" [disabled]="isMaximized">
+</div>
+
+<div class="detail-view" [ngClass]="{'show': isMaximized}" *ngIf="selectedActor">
+  <div class="card">
+    <div class="card-body">
+      <div class="image" [ngStyle]="{backgroundImage: 'url(' + actorImage(selectedActor) + ')'}"></div>
+      <div class="bio">
+        <button (click)="closeActor(selectedActor)">
+          <span class="top"></span>
+          <span class="bottom"></span>
+        </button>
+
+        <h2>{{selectedActor?.firstName}} {{selectedActor?.lastName}}</h2>
+        <p>
+          {{selectedActor?.bio}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper" [ngClass]="{'hide': isMaximized}">
+  <div class="card" *ngFor="let actor of actors | filterString: filter; let i = index" [ngClass]="{'maximized': actor.maximized}">
+    <div class="card-header">
+      <h4>{{actor?.firstName}} {{actor?.lastName}}</h4>
+    </div>
+    <div class="card-body">
+      <img [src]="actorImage(actor)" alt="">
+    </div>
+    <div class="card-footer">
+      <button (click)="max($event, i)">Tell me more!</button>
+    </div>
+  </div>
+</div>

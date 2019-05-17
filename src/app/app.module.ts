@@ -1,18 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ActorListComponent } from './components/actor-list/actor-list.component';
+import {FilterStringPipe} from './shared/pipes/filter-string.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ActorListComponent,
+    FilterStringPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [FilterStringPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
